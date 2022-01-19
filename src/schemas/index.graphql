@@ -1,0 +1,9 @@
+type Student {
+  firstName: String!,
+  lastName: String!
+  id: Int!
+}
+
+type Query {
+  students: [Student]
+}
