@@ -1,4 +1,5 @@
 import { GraphQLResolveInfo } from 'graphql';
+import { gql } from '@apollo/client';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
@@ -22,7 +23,11 @@ export type Student = {
   __typename?: 'Student';
   firstName: Scalars['String'];
   id: Scalars['Int'];
+  imageUrl?: Maybe<Scalars['String']>;
   lastName: Scalars['String'];
+  linkedinUrl?: Maybe<Scalars['String']>;
+  role?: Maybe<Scalars['String']>;
+  twitterUrl?: Maybe<Scalars['String']>;
 };
 
 
@@ -115,9 +120,13 @@ export type QueryResolvers<ContextType = any, ParentType extends ResolversParent
 };
 
 export type StudentResolvers<ContextType = any, ParentType extends ResolversParentTypes['Student'] = ResolversParentTypes['Student']> = {
-  description?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  firstName?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
-  title?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  imageUrl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  lastName?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  linkedinUrl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  role?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  twitterUrl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
