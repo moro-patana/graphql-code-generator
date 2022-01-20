@@ -51,11 +51,7 @@ const schema = loadSchemaSync("**/*.graphql", {
 
   const resolvers = {
     Query: {
-      students: (): Student[] => {
-        console.log(students);
-        
-        return students
-      },
+      students: (): Student[] => students
     },
   };
 
