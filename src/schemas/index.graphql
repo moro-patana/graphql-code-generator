@@ -11,3 +11,13 @@ type Student {
 type Query {
   students: [Student]
 }
+
+type Mutation {
+  addStudent(firstName: String!,
+  lastName: String!
+  id: Int!
+  role: String
+  twitterUrl: String
+  linkedinUrl: String
+  imageUrl: String):Student
+}

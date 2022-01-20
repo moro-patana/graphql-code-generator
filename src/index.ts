@@ -53,6 +53,22 @@ const schema = loadSchemaSync("**/*.graphql", {
     Query: {
       students: (): Student[] => students
     },
+    Mutation: {
+      addStudent: (root:Student[], args:Student) => {
+        const newStudent = {
+          id: args.id,
+          firstName: args.firstName,
+          lastName: args.lastName,
+          role: args.role,
+          imageUrl: args.imageUrl,
+          twitterUrl:args.twitterUrl,
+          linkedinUrl: args.linkedinUrl
+        };
+        students.push(newStudent);
+  
+        return newStudent;
+      },
+    }
   };
 
   const schemaWithResolvers = addResolversToSchema({
