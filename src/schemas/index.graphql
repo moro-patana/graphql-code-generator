@@ -2,6 +2,10 @@ type Student {
   firstName: String!,
   lastName: String!
   id: Int!
+  role: String
+  twitterUrl: String
+  linkedinUrl: String
+  imageUrl: String
 }
 
 type Query {
