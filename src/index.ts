@@ -9,7 +9,7 @@ const students: Student[] = [
     firstName: "Anita",
     lastName: "Rasoa",
     id: 1,
-    imageUrl: 'https://i.ibb.co/6vhZKy4/image-1.png',
+    imageUrl: 'https://avatars.githubusercontent.com/u/60210400?v=4',
     role: 'Front-end Developer',
     linkedinUrl: '#',
     twitterUrl: '#'
@@ -18,7 +18,7 @@ const students: Student[] = [
     firstName: "Noeline",
     lastName: "Marie Jeanne",
     id: 2,
-    imageUrl: 'https://i.ibb.co/q5X4bZf/image-2.png',
+    imageUrl: 'https://avatars.githubusercontent.com/u/60210215?v=4',
     role: 'Front-end Developer',
     linkedinUrl: '#',
     twitterUrl: '#'
@@ -27,7 +27,7 @@ const students: Student[] = [
     firstName: "Sarah",
     lastName: "Razanatsoa",
     id: 3,
-    imageUrl: 'https://i.ibb.co/LRP5n6k/image-4.png',
+    imageUrl: 'https://avatars.githubusercontent.com/u/60210165?v=4',
     role: 'Front-end Developer',
     linkedinUrl: '#',
     twitterUrl: '#'
@@ -36,7 +36,7 @@ const students: Student[] = [
     firstName: "Tantely",
     lastName: "Andrianarivola",
     id: 4,
-    imageUrl: 'https://i.ibb.co/TR9LL3q/image-3.png',
+    imageUrl: 'https://avatars.githubusercontent.com/u/60210112?v=4',
     role: 'Front-end Developer',
     linkedinUrl: '#',
     twitterUrl: '#'
@@ -51,7 +51,11 @@ const schema = loadSchemaSync("**/*.graphql", {
 
   const resolvers = {
     Query: {
-      students: (): Student[] => students,
+      students: (): Student[] => {
+        console.log(students);
+        
+        return students
+      },
     },
   };
 
