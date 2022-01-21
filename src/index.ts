@@ -2,9 +2,7 @@ import { loadSchemaSync } from "@graphql-tools/load";
 import { GraphQLFileLoader } from "@graphql-tools/graphql-file-loader";
 import { addResolversToSchema } from "@graphql-tools/schema";
 import { ApolloServer } from "apollo-server";
-import { Student } from "./types/types";
-
-const students: Student[] = [
+import { Student } from "./types/types";let students: Student[] = [
   {
     firstName: "Anita",
     lastName: "Rasoa",
@@ -68,6 +66,28 @@ const schema = loadSchemaSync("**/*.graphql", {
   
         return newStudent;
       },
+     
+    deleteStudent: (root:Student[], args:Student) => {
+      const removeIndex = students.findIndex(student => student.id === args.id);
+      const removedLink = students[removeIndex];
+      students.splice(removeIndex, 1);
+
+      return removedLink;
+    },
+
+    updateStudent: (root:Student[], args:Student) => {
+      let updatedStudent;
+
+      students = students.map(student => {
+        if (student.id === args.id) {
+          updatedStudent = { ...student, ...args };
+          return updatedStudent;
+        }
+        return student;
+      });
+
+      return updatedStudent;
+    },
     }
   };
 
