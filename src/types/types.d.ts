@@ -41,7 +41,7 @@ export type MutationDeleteStudentArgs = {
 
 export type MutationUpdateStudentArgs = {
   firstName?: InputMaybe<Scalars['String']>;
-  id: Scalars['Int'];
+  id?: InputMaybe<Scalars['Int']>;
   imageUrl?: InputMaybe<Scalars['String']>;
   lastName?: InputMaybe<Scalars['String']>;
   linkedinUrl?: InputMaybe<Scalars['String']>;
@@ -155,7 +155,7 @@ export type ResolversParentTypes = {
 export type MutationResolvers<ContextType = any, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
   addStudent?: Resolver<Maybe<ResolversTypes['Student']>, ParentType, ContextType, RequireFields<MutationAddStudentArgs, 'firstName' | 'id' | 'lastName'>>;
   deleteStudent?: Resolver<Maybe<ResolversTypes['Student']>, ParentType, ContextType, RequireFields<MutationDeleteStudentArgs, 'id'>>;
-  updateStudent?: Resolver<Maybe<ResolversTypes['Student']>, ParentType, ContextType, RequireFields<MutationUpdateStudentArgs, 'id'>>;
+  updateStudent?: Resolver<Maybe<ResolversTypes['Student']>, ParentType, ContextType, RequireFields<MutationUpdateStudentArgs, never>>;
 };
 
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {

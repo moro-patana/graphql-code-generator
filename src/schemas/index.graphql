@@ -21,6 +21,6 @@ type Mutation {
   linkedinUrl: String
   imageUrl: String):Student,
 
-  updateStudent(id: Int!, firstName:String, lastName:String, role:String, imageUrl: String, linkedinUrl: String, twitterUrl:String): Student
+  updateStudent(id: Int, firstName:String, lastName:String, role:String, imageUrl: String, linkedinUrl: String, twitterUrl:String): Student
   deleteStudent(id: Int!):Student
 }
